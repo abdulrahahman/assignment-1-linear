@@ -1,0 +1,143 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang16393{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Cambria Math;}}
+{\*\generator Riched20 10.0.16299}{\*\mmathPr\mmathFont1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs40\lang9  Q1. Write a program to find all pairs of an integer array whose sum is equal to a given number?\par
+Add each element in the array to all the remaining elements (except itself).\par
+Verify if the sum is equal to the required number.\par
+If true, print their indices.\par
+\par
+Q2. Write a program to reverse an array in place? In place means you cannot create a new array. You have to update the original array.\par
+Place the two pointers (let start and end ) at the start and end of the array.\par
+Swap arr[start] and arr[end]\par
+Increment start and decrement end with 1.\par
+If start reached to the value length/2 or start \f1\u8805?\f0  end , then terminate otherwise repeat from step 2.\par
+\par
+Q3. Write a program to check if two strings are a rotation of each other?\par
+Create a temp string and store concatenation of str1 to str1 in temp. temp = str1. str1 2. If str2 is a substring of temp then str1 and str2 are rotations of each other.\par
+\par
+Q4. Write a program to print the first non-repeated character from a string?\par
+Take String as a input from the user.\par
+Create array of 256 element to store frequency of each character.\par
+Iterate a loop from 0 to length of the string to calculate frequency of each character.\par
+Again iterate a loop from 0 to 256 to find the character whose frequency is 1 and also print that character.\par
+\par
+Q5. Read about the Tower of Hanoi algorithm. Write a program to implement it.\par
+Tower of Hanoi is a mathematical puzzle where we have three rods and n disks. The objective of the puzzle is to move the entire stack to another rod, obeying the following simple rules: Only one disk can be moved at a time.\par
+\par
+Q6. Read about infix, prefix, and postfix expressions. Write a program to convert postfix to prefix expression.\par
+When you write an arithmetic expression such as B * C, the form of the expression provides you with information so that you can interpret it correctly. In this case we know that the variable B is being multiplied by the variable C since the multiplication operator * appears between them in the expression. This type of notation is referred to as infix since the operator is in between the two operands that it is working on.\par
+\par
+Consider another infix example, A + B * C. The operators + and * still appear between the operands, but there is a problem. Which operands do they work on? Does the + work on A and B or does the * take B and C? The expression seems ambiguous.\par
+\par
+In fact, you have been reading and writing these types of expressions for a long time and they do not cause you any problem. The reason for this is that you know something about the operators + and *. Each operator has a precedence level. Operators of higher precedence are used before operators of lower precedence. The only thing that can change that order is the presence of parentheses. The precedence order for arithmetic operators places multiplication and division above addition and subtraction. If two operators of equal precedence appear, then a left-to-right ordering or associativity is used.\par
+\par
+Let\rquote s interpret the troublesome expression A + B * C using operator precedence. B and C are multiplied first, and A is then added to that result. (A + B) * C would force the addition of A and B to be done first before the multiplication. In expression A + B + C, by precedence (via associativity), the leftmost + would be done first.\par
+\par
+Although all this may be obvious to you, remember that computers need to know exactly what operators to perform and in what order. One way to write an expression that guarantees there will be no confusion with respect to the order of operations is to create what is called a fully parenthesized expression. This type of expression uses one pair of parentheses for each operator. The parentheses dictate the order of operations; there is no ambiguity. There is also no need to remember any precedence rules.\par
+\par
+The expression A + B * C + D can be rewritten as ((A + (B * C)) + D) to show that the multiplication happens first, followed by the leftmost addition. A + B + C + D can be written as (((A + B) + C) + D) since the addition operations associate from left to right.\par
+\par
+There are two other very important expression formats that may not seem obvious to you at first. Consider the infix expression A + B. What would happen if we moved the operator before the two operands? The resulting expression would be + A B. Likewise, we could move the operator to the end. We would get A B +. These look a bit strange.\par
+\par
+These changes to the position of the operator with respect to the operands create two new expression formats, prefix and postfix. Prefix expression notation requires that all operators precede the two operands that they work on. Postfix, on the other hand, requires that its operators come after the corresponding operands. A few more examples should help to make this a bit clearer (see Table 2).\par
+\par
+A + B * C would be written as + A * B C in prefix. The multiplication operator comes immediately before the operands B and C, denoting that * has precedence over +. The addition operator then appears before the A and the result of the multiplication.\par
+\par
+In postfix, the expression would be A B C * +. Again, the order of operations is preserved since the * appears immediately after the B and the C, denoting that * has precedence, with + coming after. Although the operators moved and now appear either before or after their respective operands, the order of the operands stayed exactly the same relative to one another.\par
+\par
+Table 2: Examples of Infix, Prefix, and Postfix\par
+Infix Expression\par
+\par
+Prefix Expression\par
+\par
+Postfix Expression\par
+\par
+A + B\par
+\par
++ A B\par
+\par
+A B +\par
+\par
+A + B * C\par
+\par
++ A * B C\par
+\par
+A B C * +\par
+\par
+Now consider the infix expression (A + B) * C. Recall that in this case, infix requires the parentheses to force the performance of the addition before the multiplication. However, when A + B was written in prefix, the addition operator was simply moved before the operands, + A B. The result of this operation becomes the first operand for the multiplication. The multiplication operator is moved in front of the entire expression, giving us * + A B C. Likewise, in postfix A B + forces the addition to happen first. The multiplication can be done to that result and the remaining operand C. The proper postfix expression is then A B + C *.\par
+\par
+Consider these three expressions again (see Table 3). Something very important has happened. Where did the parentheses go? Why don\rquote t we need them in prefix and postfix? The answer is that the operators are no longer ambiguous with respect to the operands that they work on. Only infix notation requires the additional symbols. The order of operations within prefix and postfix expressions is completely determined by the position of the operator and nothing else. In many ways, this makes infix the least desirable notation to use.\par
+\par
+Table 3: An Expression with Parentheses\par
+Infix Expression\par
+\par
+Prefix Expression\par
+\par
+Postfix Expression\par
+\par
+(A + B) * C\par
+\par
+* + A B C\par
+\par
+A B + C *\par
+\par
+Table 4 shows some additional examples of infix expressions and the equivalent prefix and postfix expressions. Be sure that you understand how they are equivalent in terms of the order of the operations being performed.\par
+\par
+Table 4: Additional Examples of Infix, Prefix, and Postfix\par
+Infix Expression\par
+\par
+Prefix Expression\par
+\par
+Postfix Expression\par
+\par
+A + B * C + D\par
+\par
++ + A * B C D\par
+\par
+A B C * + D +\par
+\par
+(A + B) * (C + D)\par
+\par
+* + A B + C D\par
+\par
+A B + C D + *\par
+\par
+A * B + C * D\par
+\par
++ * A B * C D\par
+\par
+A B * C D * +\par
+\par
+A + B + C + D\par
+\par
++ + + A B C D\par
+\par
+A B + C + D +\par
+\par
+Q7. Write a program to convert prefix expression to infix expression.\par
+If character is operand, push it to stack.\par
+If character is operator, pop operand from stack, say it's s1. pop operand from stack, say it's s2. ...\par
+Once the expression iteration is completed, initialize result string and pop out from stack and add it to result.\par
+Return the result.\par
+\par
+Q8. Write a program to check if all the brackets are closed in a given code snippet.\par
+Given an expression string exp, write a program to examine whether the pairs and the orders of \ldblquote\{\ldblquote , \ldblquote\}\rdblquote , \ldblquote (\ldblquote , \ldblquote )\rdblquote , \ldblquote [\ldblquote , \ldblquote ]\rdblquote  are correct in exp.\par
+\par
+Example: \par
+\par
+Input: exp = \ldblquote [()]\{\}\{[()()]()\}\rdblquote  \par
+Output: Balanced\par
+\par
+Input: exp = \ldblquote [(])\rdblquote  \par
+Output: Not Balanced \par
+\par
+Q9. Write a program to reverse a stack.\par
+Create a stack of the same size to store the characters. Traverse the string and push each and every character into the stack one by one. Traverse again and start popping the characters out and concatenate them together into a string. Print the reversed string.\par
+\par
+Q10. Write a program to find the smallest number using a stack.\par
+Count the frequency of each digit in the number.\par
+If it is a non-negative number then. Place the smallest digit (except 0) at the left most of the required number. ...\par
+Else if it is a negative number then. Place the largest digit at the left most of the required number.\par
+
+\pard\sa200\sl276\slmult1\qr\lang9\par
+}
+ 
